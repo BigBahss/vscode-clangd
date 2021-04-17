@@ -154,64 +154,77 @@
         "commands": [
             {
                 "command": "clangd.switchheadersource",
-                "title": "clangd: Switch between source/header"
+                "title": "Switch between source/header",
+                "category": "clangd"
             },
             {
                 "command": "clangd.install",
-                "title": "clangd: Download language server"
+                "title": "Download language server",
+                "category": "clangd"
             },
             {
                 "command": "clangd.update",
-                "title": "clangd: Check for language server update"
+                "title": "Check for language server update",
+                "category": "clangd"
             },
             {
                 "command": "clangd.activate",
-                "title": "clangd: Manually activate extension"
+                "title": "Manually activate extension",
+                "category": "clangd"
             },
             {
                 "command": "clangd.restart",
-                "title": "clangd: Restart language server"
+                "title": "Restart language server",
+                "category": "clangd"
             },
             {
                 "command": "clangd.typeHierarchy",
-                "title": "Open Type Hierarchy"
+                "title": "Open Type Hierarchy",
+                "category": "clangd"
             },
             {
                 "command": "clangd.typeHierarchy.viewParents",
                 "title": "Types: Show Base Classes",
-                "icon": "$(triangle-up)"
+                "icon": "$(triangle-up)",
+                "category": "clangd"
             },
             {
                 "command": "clangd.typeHierarchy.viewChildren",
                 "title": "Types: Show Derived Classes",
-                "icon": "$(triangle-down)"
+                "icon": "$(triangle-down)",
+                "category": "clangd"
             },
             {
                 "command": "clangd.typeHierarchy.close",
                 "title": "Close",
-                "icon": "$(panel-close)"
+                "icon": "$(panel-close)",
+                "enablement": "clangd.typeHierarchyVisible"
             },
             {
                 "command": "clangd.memoryUsage",
-                "title": "clangd: Show memory usage",
+                "title": "Show memory usage",
                 "enablement": "clangd.memoryUsage.supported",
-                "icon": "$(refresh)"
+                "icon": "$(refresh)",
+                "category": "clangd"
             },
             {
                 "command": "clangd.memoryUsage.close",
                 "title": "Close",
-                "icon": "$(panel-close)"
+                "icon": "$(panel-close)",
+                "enablement": "clangd.memoryUsage.hasData"
             },
             {
                 "command": "clangd.ast",
                 "title": "Show AST",
                 "enablement": "clangd.ast.supported",
-                "icon": "$(list-tree)"
+                "icon": "$(list-tree)",
+                "category": "clangd"
             },
             {
                 "command": "clangd.ast.close",
                 "title": "Close",
-                "icon": "$(panel-close)"
+                "icon": "$(panel-close)",
+                "enablement": "clangd.ast.hasData"
             }
         ],
         "keybindings": [
@@ -275,11 +288,11 @@
             "commandPalette": [
                 {
                     "command": "clangd.typeHierarchy.viewParents",
-                    "when": "resourceLangId == cpp"
+                    "when": "resourceLangId == cpp && clangd.typeHierarchyVisible"
                 },
                 {
                     "command": "clangd.typeHierarchy.viewChildren",
-                    "when": "resourceLangId == cpp"
+                    "when": "resourceLangId == cpp && clangd.typeHierarchyVisible"
                 },
                 {
                     "command": "clangd.memoryUsage",
